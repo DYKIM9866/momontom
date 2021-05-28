@@ -1,0 +1,129 @@
+body{
+    padding: 25px;
+    margin: auto;
+    text-align: center;
+}
+.bgimage{
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    animation: fadeIn .5s linear;
+}
+
+.theDate-container{
+    text-align: center;
+    margin: 0 auto;
+    padding-top: 150px;
+    width: 700px;
+}
+.date{
+    color:#dfe6e9;
+    font-size: 30pt;
+    font-weight: 700;
+    margin: 0;
+    margin-bottom: 10px;
+}
+.time{
+    color:#dfe6e9;
+    margin: 0;
+    margin-top: 10px;
+    font-size: 45pt;
+    font-weight: 700;
+}
+
+
+/* 호스트 입력/출력 */
+.hide{
+    display: none;
+}
+.showing{
+    display: block;
+}
+
+.inputHost,.welcome{
+    margin: 0 auto;
+    width: 60%;
+    text-align: center;
+}
+
+.inputHost > input{
+    width: 500px;
+    height: 40px;
+    text-align: center;
+    font-size: 20px;
+    color: #dfe6e9;
+    background-color: transparent;
+    border: 0;
+    border-bottom: 2px solid #dfe6e9;
+}
+.inputHost > input::placeholder{
+    color: #dfe6e9;
+    font-size: 20px;
+}
+.wel-hi{
+    color: #dfe6e9;
+    font-size: 30px;
+}
+.wel-btn{
+    margin: auto;
+}
+.delbtn{
+    background-color: transparent;
+    border: 0;
+    margin-top: 3px;
+}
+.imo-x{
+    width: 10px;
+    height: 10px;
+    margin-left: 15px;
+}
+
+/* TODO LIST */
+ul{
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    text-align: center;
+    width: 90%;
+}
+.inputToDo > input{
+    width: 500px;
+    height: 40px;
+    margin-top: 40px;
+    text-align: center;
+    font-size: 20px;
+    color: #dfe6e9;
+    background-color: transparent;
+    border: 0;
+    border-bottom: 2px solid #dfe6e9;
+}
+
+.inputToDo > input::placeholder{
+    color: #dfe6e9;
+    font-size: 20px;
+}
+
+.toDoList-container{
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.toDoList-li{
+    text-align: center;
+    width: 50%;
+    height: 40px;
+    color: #dfe6e9;
+    font-size: 20px;
+}
+
+/* 날씨 */
+.weather{
+    font-size: 30px;
+    font-weight: 600;
+    color: #dfe6e9;
+}
