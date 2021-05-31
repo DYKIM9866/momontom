@@ -119,6 +119,9 @@ ul{
     color: #dfe6e9;
     font-size: 20px;
 }
+.delLine{
+    text-decoration: line-through;
+}
 
 /* 날씨 */
 .weather{

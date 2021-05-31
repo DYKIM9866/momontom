@@ -61,7 +61,9 @@ function saveToDos(){
     localStorage.setItem("toDos",JSON.stringify(toDos));
 }
 
-function printToDo(text){
+function printToDo(text,delline){
+    console.log(delline);
+    console.log(typeof(delline));
     const li = document.createElement("li");
     const delbtn = document.createElement("img");
     const span = document.createElement("span");
@@ -82,6 +84,26 @@ function printToDo(text){
     });
     
     span.innerText = text;
+    if(delline === 1){
+        span.classList.add("delLine");
+    }
+    span.addEventListener("click",function(event){
+        if(delline === 0){
+            span.classList.add("delLine");
+            delline = 1;
+        }else if(delline === 1){
+            span.classList.remove("delLine");
+            delline = 0;
+        }
+        const filterToDos = toDos.filter(function(toDo){
+            if(toDo.text == text){
+                toDo.delLine = delline;
+            }
+            return toDo;
+        });
+        toDos = filterToDos;
+        saveToDos();
+    });
     li.appendChild(span);
     li.appendChild(delbtn);
     li.id = newId;
@@ -89,7 +111,8 @@ function printToDo(text){
     toDoList.appendChild(li);
     const toDoObj ={
         text : text,
-        id : newId
+        id : newId,
+        delLine: delline
     };
     toDos.push(toDoObj);
     saveToDos();
@@ -120,7 +143,7 @@ function loadToDos(){
     }else{
         const parsedToDos = JSON.parse(loadedToDos);
         parsedToDos.forEach(function (toDo){
-            printToDo(toDo.text);
+            printToDo(toDo.text,toDo.delLine);
         });
     }
 }
@@ -133,7 +156,7 @@ function init(){
     toDoForm.addEventListener("submit",function(event){
         event.preventDefault();
         const text = toDoInput.value;
-        printToDo(text);
+        printToDo(text,0);
         toDoInput.value = "";
     });
 }
